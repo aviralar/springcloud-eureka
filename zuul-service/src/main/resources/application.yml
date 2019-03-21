@@ -1,0 +1,23 @@
+zuul:
+   prefix: /api/
+   routes:
+      CLIENT-A:
+         path: /server/**
+         serviceId: client-a
+      CLIENT-B:
+         path: /client/**
+         serviceId: client-b 
+         
+eureka:
+   client:
+      serviceUrl:
+         defaultZone: http://localhost:8070/eureka/
+      instance:
+         hostname: localhost
+
+server:
+   port: 8079
+
+spring:
+   application:
+      name: zuul-service
